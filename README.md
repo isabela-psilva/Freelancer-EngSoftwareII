@@ -8,3 +8,6 @@ Primeiro Projeto Eng. de Software II
 ## Instalar ícones coloridos
 
 > Material Icon
+
+## Iniciar projeto no terminal
+> npm run dev
