@@ -1,3 +1,11 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Previne qualquer estouro lateral de elementos internos */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +15,7 @@
 
 .home-container {
   min-height: 100vh;
+  width: 100%; /* Use 100% em vez de 100vw para respeitar os limites do viewport */
   display: flex;
   flex-direction: column;
   background-color: #5b8e8f;

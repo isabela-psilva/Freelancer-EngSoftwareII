@@ -1,7 +1,7 @@
 import React from 'react';
 import './Prince.css';
 
-export function Index {
+export const Index: React.FC = () => {
   return (
     <div className="home-container">
       <header className="home-header">
