@@ -1,13 +1,21 @@
 import React from 'react';
 import './Prince.css';
+import { Link } from 'react-router-dom';
+
 
 export const Index: React.FC = () => {
   return (
     <div className="home-container">
-      <header className="home-header">
-        <h1>HOME</h1>
-      </header>
-
+      <div>
+        <header className="home-header">
+          <nav className="sobre-nav">
+            <span className="nav-item">HOME</span>
+            <Link to = "/Sobre">
+              <span className="nav-item">SOBRE</span>
+            </Link>
+          </nav>
+        </header>
+      </div>
       <main className="home-content">
         <section className="text-section">
           <h2 className="main-title">
