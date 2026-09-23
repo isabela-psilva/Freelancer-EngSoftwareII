@@ -8,10 +8,10 @@ export const Sobre: React.FC = () => {
     <div className="sobre-container">
       <header className="sobre-header">
         <nav className="sobre-nav">
-            <Link to = "/Principal">
+            <Link to = "/Principal" style={{ textDecoration: 'none' }}>
                 <span className="nav-item">HOME</span>
             </Link>
-            <Link to = "/Sobre">
+            <Link to = "/Sobre" style={{ textDecoration: 'none' }}>
                 <span className="nav-item">SOBRE</span>
             </Link>    
         </nav>

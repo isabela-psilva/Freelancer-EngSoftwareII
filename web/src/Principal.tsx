@@ -9,8 +9,10 @@ export const Index: React.FC = () => {
       <div>
         <header className="home-header">
           <nav className="sobre-nav">
-            <span className="nav-item">HOME</span>
-            <Link to = "/Sobre">
+            <Link to = "/Principal" style={{ textDecoration: 'none' }}>
+              <span className="nav-item">HOME</span>
+            </Link>
+            <Link to = "/Sobre" style={{ textDecoration: 'none' }}>
               <span className="nav-item">SOBRE</span>
             </Link>
           </nav>
