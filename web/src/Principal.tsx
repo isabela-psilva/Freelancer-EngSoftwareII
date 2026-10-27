@@ -15,6 +15,9 @@ export const Index: React.FC = () => {
             <Link to = "/Sobre" style={{ textDecoration: 'none' }}>
               <span className="nav-item">SOBRE</span>
             </Link>
+            <Link to = "/Login" style={{ textDecoration: 'none'}}>
+              <span className="nav-item">LOGIN</span>
+            </Link>
           </nav>
         </header>
       </div>

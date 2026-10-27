@@ -13,6 +13,9 @@ export const Sobre: React.FC = () => {
             </Link>
             <Link to = "/Sobre" style={{ textDecoration: 'none' }}>
                 <span className="nav-item">SOBRE</span>
+            </Link>
+            <Link to = "/Login" style={{ textDecoration: 'none'}}>
+              <span className="nav-item">LOGIN</span>
             </Link>    
         </nav>
       </header>
