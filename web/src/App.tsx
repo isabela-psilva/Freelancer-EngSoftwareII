@@ -3,6 +3,8 @@ import Index from './Principal';
 import Sobre from './Sobre';
 import Login from './Login';
 import Cadastro from './Cadastro';
+import Servicos from './Servicos';
+import Carrinho from './Carrinho';
 import Footer from './Footer';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
         <Route path="/Sobre" element={<Sobre />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Cadastro" element={<Cadastro />} />
+        <Route path="/Servicos" element={<Servicos />} />
+        <Route path="/Carrinho" element={<Carrinho />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 

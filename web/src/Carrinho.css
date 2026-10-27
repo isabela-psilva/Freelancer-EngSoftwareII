@@ -1,0 +1,212 @@
+.cart-container {
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #5b8e8f;
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+.cart-header {
+  background-color: #3f6869;
+  padding: 1.2rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.cart-nav-left {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.cart-nav-item {
+  color: #ffffff;
+  font-size: clamp(1rem, 1.2vh + 0.5vw, 1.2rem);
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.cart-nav-right {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.cart-icon {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Conteúdo */
+.cart-content {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Card Escuro Central (Design da Imagem) */
+.cart-card {
+  background-color: #2b494a;
+  border-radius: 35px;
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.cart-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+/* Estrutura da TabelaCinza Interna */
+.cart-table-wrapper {
+  width: 100%;
+  background-color: #d8dede;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #2b494a;
+  font-weight: 600;
+}
+
+.cart-table th {
+  border-bottom: 1.5px solid #2b494a;
+  border-right: 1.5px solid #2b494a;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+.cart-table th:last-child {
+  border-right: none;
+}
+
+.cart-table td {
+  border-right: 1.5px solid #2b494a;
+  padding: 0.8rem 1rem;
+  vertical-align: middle;
+}
+
+.cart-table td:last-child {
+  border-right: none;
+}
+
+.col-produto {
+  width: 50%;
+}
+
+.col-qtd {
+  width: 25%;
+  text-align: center;
+}
+
+.col-preco {
+  width: 25%;
+  text-align: right;
+}
+
+/* Controles de Quantidade e Remoção */
+.produto-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  color: #a83232;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 0.3rem;
+}
+
+.qtd-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-qtd {
+  background-color: #2b494a;
+  color: #ffffff;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrinho-vazio {
+  text-align: center;
+  padding: 2rem !important;
+  color: #555;
+  font-style: italic;
+}
+
+/* Área do Total */
+.cart-total-section {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cart-total-section h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Botão Finalizar Pagamento */
+.cart-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-pagamento {
+  background-color: #d8dede;
+  color: #2b494a;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pagamento:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}

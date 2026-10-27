@@ -1,0 +1,164 @@
+.serv-container {
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #5b8e8f;
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+.serv-header {
+  background-color: #3f6869;
+  padding: 1.2rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.serv-nav-left {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.serv-nav-item {
+  color: #ffffff;
+  font-size: clamp(1rem, 1.2vh + 0.5vw, 1.2rem);
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.serv-nav-right {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.serv-icon {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.serv-icon:hover {
+  transform: scale(1.1);
+}
+
+.serv-banner-section {
+  background-color: #4c7b7c;
+  height: 2.5rem;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Área central com os 3 cards */
+.serv-content {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+}
+
+.serv-cards-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Card Individual */
+.serv-card {
+  flex: 1;
+  background-color: #2b494a;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+}
+
+/* Parte superior do card (Fundo Branco com a imagem) */
+.serv-card-image-wrapper {
+  background-color: #ffffff;
+  height: 200px; /* Ou a altura que preferir para a área da imagem */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove qualquer espaçamento interno */
+  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas superiores */
+}
+
+.serv-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher todo o espaço disponível sem distorcer */
+}
+
+/* Parte inferior do card (Escura) */
+.serv-card-body {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.serv-card-title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.serv-btn-carrinho {
+  background-color: #d8dede;
+  color: #2b494a;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.serv-btn-carrinho:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.serv-card-price {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: -0.2rem 0 0.2rem 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 850px) {
+  .serv-cards-grid {
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  
+  .serv-card {
+    width: 100%;
+  }
+}
