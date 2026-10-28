@@ -1,22 +1,7 @@
 import React, { useState } from 'react';
 import './Servicos.css';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Modal from './Modal';
-
-const navigate = useNavigate();
-
-const handleLogout = (e: React.MouseEvent) => {
-  e.preventDefault();
-  
-  // Remove os dados do usuário logado ou limpa o carrinho se preferir reiniciar a sessão
-  localStorage.removeItem('usuarioLogado');
-  // Se quiser limpar o carrinho ao sair, descomente a linha abaixo:
-  // localStorage.removeItem('carrinho');
-
-  // Redireciona para a tela de Login
-  navigate('/Login');
-};
 
 interface Servico {
   id: number;
@@ -26,6 +11,15 @@ interface Servico {
 }
 
 export const Servicos: React.FC = () => {
+  // O useNavigate agora está corretamente DENTRO do componente
+  const navigate = useNavigate();
+
+  const handleLogout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    localStorage.removeItem('usuarioLogado');
+    navigate('/Login');
+  };
+
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
 
@@ -65,6 +59,8 @@ export const Servicos: React.FC = () => {
     setModalOpen(true);
   };
 
+  const usuarioLogado = localStorage.getItem('usuarioLogado');
+
   return (
     <div className="serv-container">
       {/* Cabeçalho */}
@@ -79,9 +75,11 @@ export const Servicos: React.FC = () => {
         </nav>
 
         <div className="serv-nav-right">
-          <Link to="/Carrinho" style={{ textDecoration: 'none' }} className="icon-img-btn" title="Carrinho">
-            <span className="serv-icon">🛒</span>
-          </Link>
+          {usuarioLogado && (
+            <Link to="/Carrinho" style={{ textDecoration: 'none' }} className="icon-img-btn" title="Carrinho">
+              <span className="serv-icon">🛒</span>
+            </Link>
+          )}
           <Link 
             to="/Login" 
             onClick={handleLogout} 

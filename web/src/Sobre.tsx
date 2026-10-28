@@ -1,23 +1,23 @@
 import React from 'react';
 import './sobre.css';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-
-const navigate = useNavigate();
-
-const handleLogout = (e: React.MouseEvent) => {
-  e.preventDefault();
-  
-  // Remove os dados do usuário logado ou limpa o carrinho se preferir reiniciar a sessão
-  localStorage.removeItem('usuarioLogado');
-  // Se quiser limpar o carrinho ao sair, descomente a linha abaixo:
-  // localStorage.removeItem('carrinho');
-
-  // Redireciona para a tela de Login
-  navigate('/Login');
-};
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Sobre: React.FC = () => {
+  // O hook useNavigate fica aqui dentro, no início do componente
+  const navigate = useNavigate();
+
+  const handleLogout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Remove os dados do usuário logado
+    localStorage.removeItem('usuarioLogado');
+
+    // Redireciona para a tela de Login
+    navigate('/Login');
+  };
+
+  const usuarioLogado = localStorage.getItem('usuarioLogado');
+
   return (
     <div className="sobre-container">
       {/* Cabeçalho de Navegação */}
@@ -26,25 +26,29 @@ export const Sobre: React.FC = () => {
           <Link to="/Principal" style={{ textDecoration: 'none' }}>
             <span className="sobre-nav-item">HOME</span>
           </Link>
-          <Link to="/Login" style={{ textDecoration: 'none' }}>
-            <span className="sobre-nav-item active">LOGIN</span>
+          <Link to="/Sobre" style={{ textDecoration: 'none' }}>
+            <span className="sobre-nav-item active">SOBRE</span>
           </Link>
         </nav>
 
         <div className="sobre-nav-right">
-          {/* Ícones de Carrinho e Login */}
-          <Link to="/Carrinho" style={{ textDecoration: 'none' }} className="icon-img-btn" title="Carrinho">
-            <span className="cart-icon">🛒</span>
-          </Link>
+          {/* Ícone do Carrinho aparece apenas se estiver logado */}
+          {usuarioLogado && (
+            <Link to="/Carrinho" style={{ textDecoration: 'none' }} className="icon-img-btn" title="Carrinho">
+              <span className="cart-icon">🛒</span>
+            </Link>
+          )}
+
+          {/* Botão de Logout */}
           <Link 
-  to="/Login" 
-  onClick={handleLogout} 
-  style={{ textDecoration: 'none' }} 
-  className="icon-img-btn" 
-  title="Sair / Login"
->
-  <span className="serv-icon">🚪</span>
-</Link>
+            to="/Login" 
+            onClick={handleLogout} 
+            style={{ textDecoration: 'none' }} 
+            className="icon-img-btn" 
+            title="Sair / Login"
+          >
+            <span className="serv-icon">🚪</span>
+          </Link>
         </div>
       </header>
 

@@ -1,22 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Carrinho.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Modal from './Modal';
-import { useNavigate } from 'react-router-dom';
-
-const navigate = useNavigate();
-
-const handleLogout = (e: React.MouseEvent) => {
-  e.preventDefault();
-  
-  // Remove os dados do usuário logado ou limpa o carrinho se preferir reiniciar a sessão
-  localStorage.removeItem('usuarioLogado');
-  // Se quiser limpar o carrinho ao sair, descomente a linha abaixo:
-  // localStorage.removeItem('carrinho');
-
-  // Redireciona para a tela de Login
-  navigate('/Login');
-};
 
 interface ItemCarrinho {
   id: number;
@@ -26,6 +11,15 @@ interface ItemCarrinho {
 }
 
 export const Carrinho: React.FC = () => {
+  // O hook useNavigate fica corretamente DENTRO do componente
+  const navigate = useNavigate();
+
+  const handleLogout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    localStorage.removeItem('usuarioLogado');
+    navigate('/Login');
+  };
+
   const [carrinho, setCarrinho] = useState<ItemCarrinho[]>([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
@@ -76,7 +70,7 @@ export const Carrinho: React.FC = () => {
     if (carrinho.length === 0) {
       setModalMessage('Seu carrinho está vazio!');
     } else {
-      setModalMessage('Redirecionando para o pagamento...');
+      setModalMessage('Pagamento Efetuado!');
       localStorage.removeItem('carrinho');
       setCarrinho([]);
     }
@@ -101,14 +95,14 @@ export const Carrinho: React.FC = () => {
             <span className="cart-icon">🛒</span>
           </Link>
           <Link 
-  to="/Login" 
-  onClick={handleLogout} 
-  style={{ textDecoration: 'none' }} 
-  className="icon-img-btn" 
-  title="Sair / Login"
->
-  <span className="serv-icon">🚪</span>
-</Link>
+            to="/Login" 
+            onClick={handleLogout} 
+            style={{ textDecoration: 'none' }} 
+            className="icon-img-btn" 
+            title="Sair / Login"
+          >
+            <span className="serv-icon">🚪</span>
+          </Link>
         </div>
       </header>
 

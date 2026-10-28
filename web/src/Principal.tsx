@@ -1,26 +1,57 @@
 import React from 'react';
 import './Prince.css';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Index: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    localStorage.removeItem('usuarioLogado');
+    navigate('/Login');
+  };
+
+  const usuarioLogado = localStorage.getItem('usuarioLogado');
+
   return (
     <div className="home-container">
-      <div>
-        <header className="home-header">
-          <nav className="sobre-nav">
-            <Link to = "/Principal" style={{ textDecoration: 'none' }}>
-              <span className="nav-item">HOME</span>
-            </Link>
-            <Link to = "/Sobre" style={{ textDecoration: 'none' }}>
-              <span className="nav-item">SOBRE</span>
-            </Link>
-            <Link to = "/Login" style={{ textDecoration: 'none'}}>
+      {/* Cabeçalho estilizado inteiramente via Prince.css */}
+      <header className="home-header">
+        <nav className="sobre-nav">
+          <Link to="/Principal" style={{ textDecoration: 'none' }}>
+            <span className="nav-item">HOME</span>
+          </Link>
+          <Link to="/Sobre" style={{ textDecoration: 'none' }}>
+            <span className="nav-item">SOBRE</span>
+          </Link>
+          {!usuarioLogado && (
+            <Link to="/Login" style={{ textDecoration: 'none' }}>
               <span className="nav-item">LOGIN</span>
             </Link>
-          </nav>
-        </header>
-      </div>
+          )}
+        </nav>
+
+        <div className="home-nav-right">
+          {usuarioLogado && (
+            <Link to="/Carrinho" style={{ textDecoration: 'none' }} className="icon-img-btn" title="Carrinho">
+              <span className="cart-icon">🛒</span>
+            </Link>
+          )}
+          
+          {usuarioLogado && (
+            <Link 
+              to="/Login" 
+              onClick={handleLogout} 
+              style={{ textDecoration: 'none' }} 
+              className="icon-img-btn" 
+              title="Sair"
+            >
+              <span className="serv-icon">🚪</span>
+            </Link>
+          )}
+        </div>
+      </header>
+
       <main className="home-content">
         <section className="text-section">
           <h2 className="main-title">
