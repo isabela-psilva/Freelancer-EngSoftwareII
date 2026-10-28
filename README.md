@@ -1,16 +1,23 @@
-FREELANCER-EngSoftwareEII - REACT+HTML+CSS+JavaScript
+# FREELANCER-EngSoftwareEII - REACT+HTML+CSS+JavaScript
 
 Disciplina: Engenharia de Software II
 
 Professor: Bruno
+
 Aluno: Isabela Pereira da Silva 
 
-Site voltado para trabalhos Freelancers, com interação entre usuário e freelancer.
+E-Commerce para trabalhos Freelancers, com interação entre usuário e freelancer. Entregando serviços de Ilustração, Escrita e Programação
 
-Tecnologias Usadas: 
+# Tecnologias Usadas: 
+
 GitHub
+
 React
+
 HTML
+
 CSS
+
 Figma
+
 Trello
