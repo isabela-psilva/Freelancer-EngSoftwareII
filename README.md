@@ -2,24 +2,36 @@
 
 Disciplina: Engenharia de Software II
 
-Professor: Bruno
+Professor: Bruno Zolotareff
 
 Aluno: Isabela Pereira da Silva 
 
 E-Commerce para trabalhos Freelancers, com interação entre usuário e freelancer. Entregando serviços de Ilustração, Escrita e Programação
 
-# Tecnologias Usadas: 
+# Front-End:
 
-GitHub
+React (JavaScript)
 
-React
+HTML5
 
-HTML
+CSS3
 
-CSS
+# Back-End:
 
-Figma
+nestjs (TyptScript)
 
-Trello
+SQLite
 
-TypeScript
+JSON
+
+# Metodologias Usadas: 
+
+SCRUM e Kanban
+
+SMART
+
+# Modelos:
+
+BPMN
+
+Arquitetura de Software
