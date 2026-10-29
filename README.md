@@ -21,3 +21,5 @@ CSS
 Figma
 
 Trello
+
+TypeScript
